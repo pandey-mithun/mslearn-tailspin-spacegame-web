@@ -1,12 +1,12 @@
 
 parameters:
-  buildConfiguration:
-    default: 'Release'
-    required: true
+- name: builConfiguration
+  type: string
+  default: 'Release'
 
 steps:
   - task: DotNetCoreCLI@2
-    displayName: 'Buid the project - ${{parameters.buildConfiguration}}'
+    displayName: 'Build the project - ${{parameters.buildConfiguration}}'
     inputs:
       command: 'build'
       arguments: '--no-restore --configuration ${{parameters.buildConfiguration}}'
