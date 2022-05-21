@@ -1,6 +1,6 @@
 
 parameters:
-- name: builConfiguration
+- name: buildConfiguration
   type: string
   default: 'Release'
 
