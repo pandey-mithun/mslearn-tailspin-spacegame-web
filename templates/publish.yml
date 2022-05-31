@@ -2,10 +2,14 @@ parameters:
 - name: buildConfiguration
   type: string
   default: 'Release'
+  
+- name: templateName
+  type: string
+  default: 'publish.yml'
 
 steps:
   - task: DotNetCoreCLI@2
-    displayName: 'Publish the project - ${{parameters.buildConfiguration}} $(Build.DefinitionName)'
+    displayName: 'Publish the project - ${{parameters.buildConfiguration}} ${{parameters.templateName}}'
     inputs:
       command: 'publish'
       projects: '**/*.csproj'
