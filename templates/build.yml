@@ -3,10 +3,14 @@ parameters:
 - name: buildConfiguration
   type: string
   default: 'Release'
+  
+- name: templateName
+  type: string
+  default: 'publish.yml'
 
 steps:
   - task: DotNetCoreCLI@2
-    displayName: 'Build the project - ${{parameters.buildConfiguration}}'
+    displayName: 'Build the project - ${{parameters.buildConfiguration}} ${{parameters.templateName}}'
     inputs:
       command: 'build'
       arguments: '--no-restore --configuration ${{parameters.buildConfiguration}}'
