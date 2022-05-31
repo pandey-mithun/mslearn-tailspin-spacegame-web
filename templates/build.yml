@@ -6,7 +6,7 @@ parameters:
   
 - name: templateName
   type: string
-  default: 'publish.yml'
+  default: 'build.yml'
 
 steps:
   - task: DotNetCoreCLI@2
